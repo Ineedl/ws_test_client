@@ -144,19 +144,16 @@ void MainWindow::InitBind(){
         }
 
     });
-
-    connect(this,&QWidget::close,this,[this](){
-       time_task_window_.close();
-    });
-
     connect(&this->time_task_window_,&TimeTaskWindow::SignalDataSend,this,[this](const QString& send_data){
         ws_client_.SendWsTextData(send_data);
     });
 
     connect(this->ui->pushButton_close,&QPushButton::clicked,this,[this](){
         this->close();
+        this->time_task_window_.close();
     });
     connect(this->ui->pushButton_min,&QPushButton::clicked,this,[this](){
         this->showMinimized();
+        this->time_task_window_.close();
     });
 }
