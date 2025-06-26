@@ -1,1 +1,1 @@
-websocket client端测试工具，允许添加定时发送任务
+Qt实现的websocket client端测试工具，允许添加定时发送任务
